@@ -1,8 +1,8 @@
 import React from "react";
-import ApiData from "./components/ApiData";
+import FarmStandData from "./components/FarmStandData";
 
 const App = () => {
-  return <ApiData />;
+  return <FarmStandData />;
 };
 
 export default App;
