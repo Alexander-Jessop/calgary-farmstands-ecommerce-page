@@ -1,15 +1,12 @@
 import React from "react";
 import FarmerLogin from "./components/FarmerLogin";
-import FarmStandData from "./components/FarmStandData";
-
-
+import FarmStandData from "./components/FarmStandData/FarmStandData";
 import Navbar from "./components/Navbar/Navindex";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import ApiData from "./components/FarmStandData";
 
 function App() {
   return (
-    <>
+    <React.Fragment>
       <Router>
         <Navbar />
         <Routes>
@@ -22,7 +19,7 @@ function App() {
           <Route path="/cart" element={"Details"}></Route>
         </Routes>
       </Router>
-    </>
+    </React.Fragment>
   );
 }
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import FarmStandCard from "./Card/FarmStandCard";
+import FarmStandCard from "../Card/FarmStandCard";
 import ShortenData from "./ShortenData";
 import axios from "axios";
 import "./FarmStandData.css";
