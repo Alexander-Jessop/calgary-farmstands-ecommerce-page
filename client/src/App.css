@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
 .App {
   text-align: center;
 }
@@ -35,4 +38,32 @@
   to {
     transform: rotate(360deg);
   }
+}
+   
+* {
+  font-family: 'Sora', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  filter: invert(1);
+}
+  /* search box */
+.cui.search-box .search-box-input {
+    height: 2.875rem;
+    padding-right: 2.875rem;
+    position: relative;
+}
+  /* search box */
+.form-control {
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0.0625rem solid #b7b9bb;
+    border-radius: 0.15625rem;
+    color: #4c4c4c;
+    display: block;
+    font-size: 1rem;
+    line-height: 1.5;
+    height: 2.875rem;
+    padding: 0.625rem 0.75rem;
+    width: 100%;
 }
