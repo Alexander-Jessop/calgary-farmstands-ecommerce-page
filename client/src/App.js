@@ -1,5 +1,6 @@
 import React from "react";
-import ApiData from "./components/ApiData";
+import FarmerLogin from "./components/FarmerLogin";
+import FarmStandData from "./components/FarmStandData";
 
 import Navbar from "./components/Navbar/Navindex";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
