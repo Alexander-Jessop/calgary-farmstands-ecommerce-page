@@ -2,6 +2,7 @@ import React from "react";
 import FarmerLogin from "./components/FarmerLogin";
 import FarmStandData from "./components/FarmStandData";
 
+
 import Navbar from "./components/Navbar/Navindex";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ApiData from "./components/FarmStandData";
@@ -24,13 +25,5 @@ function App() {
     </>
   );
 }
-// const App = () => {
-//   return (
-//     <div>
-//       <FarmStandData />
-//       <FarmerLogin />
-//     </div>
-//   );
-// };
 
 export default App;
