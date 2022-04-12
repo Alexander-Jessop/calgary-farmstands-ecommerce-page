@@ -1,0 +1,34 @@
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.farmDataDiv {
+  width: 330px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin: 2em;
+  border-radius: 10px;
+}
+.farmDataDiv h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 1em;
+  padding: 1em 0;
+}
+.farmDataDiv img {
+  width: 100%;
+  height: auto;
+}
+address {
+  padding: 0.5em;
+}
+.farmDataDiv p {
+  text-align: center;
+  padding: 0.2em;
+}
+.farmDataDiv p:nth-last-of-type(1) {
+  padding-bottom: 1em;
+}

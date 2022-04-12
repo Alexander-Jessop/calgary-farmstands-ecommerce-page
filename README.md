@@ -28,5 +28,3 @@
 | Jeremiaha | jeremiah.ca9@gmail.com         | InceptionU                                            |
 | Neetha    | neethacohort@gmail.com         | [GitHub Profile](https://github.com/snjcoder)         |
 | Ryan      | rdcrth@gmail.com               | [GitHub Profile](https://github.com/Ryan-Caruth)      |
-
-

@@ -1,14 +1,8 @@
 import React from "react";
-import ApiData from "./components/ApiData";
-import FarmerLogin from "./components/FarmerLogin";
+import FarmStandData from "./components/FarmStandData";
 
 const App = () => {
-  return (
-  <div>
-      <ApiData />
-      <FarmerLogin />
-  </div>
-  );
+  return <FarmStandData />;
 };
 
 export default App;
