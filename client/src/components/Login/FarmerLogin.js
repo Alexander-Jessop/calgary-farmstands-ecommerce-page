@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { FaEye } from "react-icons/fa";
 
+import "./FarmerLogin.css";
+
 const FarmerLogin = () => {
 
-  const eye = <FaEye icon={FaEye} />;
   const [farmer, setFarmer] = useState('');
   const [pwd, setPwd] = useState('');
   const [showPass, setshowPass] = useState(false);
@@ -58,8 +59,7 @@ const FarmerLogin = () => {
                 value={pwd}
                 required
                 />
-                <i style={{ position: "relative", marginLeft: -20, top: 3, cursor: "pointer" }}
-                  onClick={togglePasswordVis}>{eye}</i>
+                <FaEye className = "eye" onClick={togglePasswordVis} />
               </label>
             <br />
             <label htmlFor="submit">
