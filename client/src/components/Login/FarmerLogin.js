@@ -1,9 +1,12 @@
-import {  useState } from "react"
+import { useState } from "react"
+import { FaEye } from "react-icons/fa";
 
 const FarmerLogin = () => {
 
+  const eye = <FaEye icon={FaEye} />;
   const [farmer, setFarmer] = useState('');
   const [pwd, setPwd] = useState('');
+  const [showPass, setshowPass] = useState(false);
   //Just for learning purposes - to be removed
   const [success, setSuccess] = useState(false);
 
@@ -15,6 +18,10 @@ const FarmerLogin = () => {
     //Placeholder to see action of form submission
     setSuccess(true);
   }
+
+  const togglePasswordVis = () => {
+    setshowPass(!showPass);
+  };
 
   return (
     <div>
@@ -40,18 +47,20 @@ const FarmerLogin = () => {
                 value={farmer}
                 required
               />
-            </label>
+              </label>
             <br />
             <label htmlFor="password">
               Password:
               <input
-                type="password"
+                type={showPass ? "text" : "password"}
                 id="password"
                 onChange={(e) => setPwd(e.target.value)}
                 value={pwd}
                 required
-              />
-            </label>
+                />
+                <i style={{ position: "relative", marginLeft: -20, top: 3, cursor: "pointer" }}
+                  onClick={togglePasswordVis}>{eye}</i>
+              </label>
             <br />
             <label htmlFor="submit">
               <input type="submit" id="submit" value="Sign In" />
@@ -66,7 +75,7 @@ const FarmerLogin = () => {
             <br />
             <a href="#">Forgot Password</a>
           </p>
-        </section>
+          </section>
       )}
     </div> 
   );
