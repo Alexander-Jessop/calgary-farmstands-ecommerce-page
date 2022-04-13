@@ -1,0 +1,7 @@
+.heart {
+  color: #000000;
+}
+
+.heart:hover {
+  color: #ff0000;
+}

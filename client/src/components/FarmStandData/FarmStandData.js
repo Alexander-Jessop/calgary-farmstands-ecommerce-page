@@ -5,6 +5,7 @@ import axios from "axios";
 import "./FarmStandData.css";
 import Season from "./Season";
 import RefindedHours from "./RefindedHours";
+import FavoriteButton from "../UI/FavoriteButton";
 
 const ApiData = (props) => {
   const [farmStandData, setFarmStandData] = useState([]);
@@ -36,6 +37,7 @@ const ApiData = (props) => {
             <RefindedHours hours={farmStand.hours} />
             {/* dog ear tag to flip card to show data */}
             {/* <ShortenData data={farmStand.vendor_description} /> */}
+            <FavoriteButton />
           </div>
         ))}
       </main>
