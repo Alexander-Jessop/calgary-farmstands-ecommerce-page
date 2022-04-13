@@ -4,3 +4,7 @@
     top: 3px;
     cursor: pointer;
 }
+
+p {
+    padding: 2px;
+}
