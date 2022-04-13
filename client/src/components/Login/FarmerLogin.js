@@ -29,10 +29,8 @@ const FarmerLogin = () => {
       {success ? (
         <section>
           <h1>You are logged in</h1>
-          <br />
-          <p>
+          <p />
             <a href="#">Go to home page</a>
-          </p>
         </section>
       ) : (
         <section>
@@ -49,7 +47,7 @@ const FarmerLogin = () => {
                 required
               />
               </label>
-            <br />
+              <p />
             <label htmlFor="password">
               Password:
               <input
@@ -61,20 +59,19 @@ const FarmerLogin = () => {
                 />
                 <FaEye className = "eye" onClick={togglePasswordVis} />
               </label>
-            <br />
+              <p />
             <label htmlFor="submit">
               <input type="submit" id="submit" value="Sign In" />
-            </label>
+              </label>
+              <p />
           </form>
-          <p>
-            Need an account?
-            <br />
+            <h4>Need an account?</h4>
+            <p />
             <a href="#">Sign Up</a>
-            <br />
+            <p />
             <a href="#">Continue as guest</a>
-            <br />
+            <p />
             <a href="#">Forgot Password</a>
-          </p>
           </section>
       )}
     </div> 
