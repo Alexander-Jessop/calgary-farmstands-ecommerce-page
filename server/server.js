@@ -1,7 +1,9 @@
 const express = require("express");
+const logger = require("morgan");
 const app = express();
 const axios = require("axios");
 //REQUIRES^
+app.use(logger("dev"));
 
 app.get("/", async (req, res) => {
   res.send("Hello Team!");
