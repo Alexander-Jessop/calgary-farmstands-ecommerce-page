@@ -1,0 +1,6 @@
+.eye {
+    position: relative;
+    margin-left: -20px;
+    top: 3px;
+    cursor: pointer;
+}
