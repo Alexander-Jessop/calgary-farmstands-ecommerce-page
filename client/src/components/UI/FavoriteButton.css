@@ -1,7 +1,3 @@
-.heart {
-  color: #000000;
-}
-
-.heart:hover {
-  color: #ff0000;
+.heart-color {
+  color: rgb(255, 0, 0);
 }

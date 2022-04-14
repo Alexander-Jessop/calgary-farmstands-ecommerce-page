@@ -9,12 +9,13 @@ main {
   background-color: #ffffff;
   box-shadow: 0px 5px 14px 1px rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  height: 400px;
+  height: 375px;
   width: 250px;
   display: flex;
   flex-direction: column;
   margin: 3em;
   border-radius: 10px;
+  position: relative;
 }
 .farmDataDiv h1 {
   color: rgb(116, 115, 115);
@@ -26,12 +27,13 @@ main {
 }
 .farmDataDiv img {
   width: 100%;
-  height: auto;
+  height: 175px;
+  object-fit: cover;
 }
 address {
   color: rgb(116, 115, 115);
   font-size: 0.8em;
-  padding: 0.2em 0 0.8em 0.8em;
+  padding: 0.5em 0 0.8em 0.8em;
 }
 .farmDataDiv p {
   font-size: 0.9em;
@@ -39,9 +41,18 @@ address {
   padding: 0.2em;
 }
 .farmDataDiv p:nth-last-of-type(1) {
-  padding-bottom: 1em;
+  margin-top: 1em;
+}
+.farmDataDiv p:nth-of-type(1) {
+  margin: 0.75em 1em 0 1em;
 }
 
 hr {
   color: rgb(233, 229, 229);
+}
+.heartpos {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding: 1em;
 }
