@@ -30,7 +30,7 @@ main {
   height: 175px;
   object-fit: cover;
 }
-address {
+.address {
   color: rgb(116, 115, 115);
   font-size: 0.8em;
   padding: 0.5em 0 0.8em 0.8em;
@@ -47,10 +47,10 @@ address {
   margin: 0.75em 1em 0 1em;
 }
 
-hr {
+.hr {
   color: rgb(233, 229, 229);
 }
-.heartpos {
+.cardButton {
   display: flex;
   justify-content: space-between;
   margin-top: auto;
