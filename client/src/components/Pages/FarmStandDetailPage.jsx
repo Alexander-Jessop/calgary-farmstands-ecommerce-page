@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import FarmStand from "../FarmStandData/FarmStand";
 
-function FarmStandDetail() {
+function FarmStandDetailPage() {
   let params = useParams();
   console.log(params.id);
   return (
@@ -12,4 +12,4 @@ function FarmStandDetail() {
   );
 }
 
-export default FarmStandDetail;
+export default FarmStandDetailPage;

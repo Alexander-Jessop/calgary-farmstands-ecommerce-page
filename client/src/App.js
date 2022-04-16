@@ -3,7 +3,7 @@ import LocationPage from "./components/Pages/LocationPage";
 import FarmerLoginPage from "./components/Pages/FarmerLoginPage";
 import Navbar from "./components/Navbar/Navindex";
 import { Route, Routes } from "react-router-dom";
-import FarmStandDetail from "./components/Pages/FarmStandDetail";
+import FarmStandDetailPage from "./components/Pages/FarmStandDetailPage";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Route path="/sign-up" element={"Sign Up Form"} />
         <Route path="/sign-in" element={<FarmerLoginPage />} />
         <Route path="/cart" element={"Details"} />
-        <Route path="/locationId/:id" element={<FarmStandDetail />} />
+        <Route path="/locationId/:id" element={<FarmStandDetailPage />} />
       </Routes>
     </React.Fragment>
   );
