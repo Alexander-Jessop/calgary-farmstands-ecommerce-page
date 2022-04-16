@@ -17,12 +17,32 @@ app.get("/api", async (req, res) => {
   let array = [];
   for (let i = 0; i < farmStandApi.data.length; i++) {
     array.push(farmStandApi.data[i]);
-    for (let j = 0; j < array.length; j++) {
-      array[j].images = `./images/pictures/${j}.jpg`;
-    }
+  }
+  for (let j = 0; j < array.length; j++) {
+    array[j].images = `./images/pictures/${j}.jpg`;
+  }
+  for (let k = 0; k < array.length; k++) {
+    array[k].id = `${k}`;
   }
 
   res.send(array);
+});
+
+app.get("/api/:id", async (req, res) => {
+  let id = req.params.id;
+
+  let farmStandApi = await axios.get(
+    "https://data.calgary.ca/resource/ipm6-y48y.json"
+  );
+  let array = [];
+  for (let i = 0; i < farmStandApi.data.length; i++) {
+    array.push(farmStandApi.data[i]);
+  }
+  for (let j = 0; j < array.length; j++) {
+    array[j].images = `.././images/pictures/${j}.jpg`;
+  }
+
+  res.send(array[id]);
 });
 
 app.listen(5000, (err) => {

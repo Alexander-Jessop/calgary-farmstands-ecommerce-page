@@ -1,9 +1,9 @@
 import React from "react";
-import FarmerLogin from "./components/Login/FarmerLogin";
 import LocationPage from "./components/Pages/LocationPage";
 import FarmerLoginPage from "./components/Pages/FarmerLoginPage";
 import Navbar from "./components/Navbar/Navindex";
 import { Route, Routes } from "react-router-dom";
+import FarmStandDetail from "./components/Pages/FarmStandDetail";
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
         <Route path="/sign-up" element={"Sign Up Form"} />
         <Route path="/sign-in" element={<FarmerLoginPage />} />
         <Route path="/cart" element={"Details"} />
+        <Route path="/locationId/:id" element={<FarmStandDetail />} />
       </Routes>
     </React.Fragment>
   );

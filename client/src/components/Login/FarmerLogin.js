@@ -1,12 +1,10 @@
-import { useState } from "react"
+import { useState } from "react";
 import { FaEye } from "react-icons/fa";
-
 import "./FarmerLogin.css";
 
 const FarmerLogin = () => {
-
-  const [farmer, setFarmer] = useState('');
-  const [pwd, setPwd] = useState('');
+  const [farmer, setFarmer] = useState("");
+  const [pwd, setPwd] = useState("");
   const [showPass, setshowPass] = useState(false);
   //Just for learning purposes - to be removed
   const [success, setSuccess] = useState(false);
@@ -14,11 +12,11 @@ const FarmerLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(farmer, pwd);
-    setFarmer('');
-    setPwd('');
+    setFarmer("");
+    setPwd("");
     //Placeholder to see action of form submission
     setSuccess(true);
-  }
+  };
 
   const togglePasswordVis = () => {
     setshowPass(!showPass);
@@ -30,7 +28,7 @@ const FarmerLogin = () => {
         <section>
           <h1>You are logged in</h1>
           <p />
-            <a href="#">Go to home page</a>
+          <a href="#">Go to home page</a>
         </section>
       ) : (
         <section>
@@ -46,8 +44,8 @@ const FarmerLogin = () => {
                 value={farmer}
                 required
               />
-              </label>
-              <p />
+            </label>
+            <p />
             <label htmlFor="password">
               Password:
               <input
@@ -56,26 +54,26 @@ const FarmerLogin = () => {
                 onChange={(e) => setPwd(e.target.value)}
                 value={pwd}
                 required
-                />
-                <FaEye className = "eye" onClick={togglePasswordVis} />
-              </label>
-              <p />
+              />
+              <FaEye className="eye" onClick={togglePasswordVis} />
+            </label>
+            <p />
             <label htmlFor="submit">
               <input type="submit" id="submit" value="Sign In" />
-              </label>
-              <p />
+            </label>
+            <p />
           </form>
-            <h4>Need an account?</h4>
-            <p />
-            <a href="#">Sign Up</a>
-            <p />
-            <a href="#">Continue as guest</a>
-            <p />
-            <a href="#">Forgot Password</a>
-          </section>
+          <h4>Need an account?</h4>
+          <p />
+          <a href="#">Sign Up</a>
+          <p />
+          <a href="#">Continue as guest</a>
+          <p />
+          <a href="#">Forgot Password</a>
+        </section>
       )}
-    </div> 
+    </div>
   );
-}
+};
 
-export default FarmerLogin
+export default FarmerLogin;
