@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import axios from "axios";
+import classes from "./FarmStand.module.css";
+// import MapBox from "./MapBox";
 
 function FarmStand(props) {
   const [farmStandData, setFarmStandData] = useState([]);
@@ -7,27 +9,40 @@ function FarmStand(props) {
   useEffect(() => {
     axios.get(`/api/${props.id}`).then((res) => {
       setFarmStandData(res.data);
-      console.log(res.data);
+      console.log(res.data.point.coordinates[0]);
+      console.log(res.data.point.coordinates[1]);
     });
   }, []);
 
-  console.log(props);
   return (
-    <div>
-      <div key={farmStandData.id}>
-        {/* <a href={`locationId/${farmStand.id}`}> testing </a> */}
-        <img
-          width={100}
-          height={100}
-          src={farmStandData.images}
-          alt={farmStandData.vendor_name}
-        />
-        <h1>{farmStandData.community}</h1>
-        <hr />
-        <address>{farmStandData.address}</address>
-        <div>{farmStandData.vendor_description}</div>
-      </div>
-    </div>
+    <Fragment>
+      <section className={classes.headerContainer}>
+        <div key={farmStandData.id} className={classes.storeInfo}>
+          <div className={classes.leftContainer}>
+            <div className={classes.leftInfo}>
+              <img
+                className={classes.img}
+                width={200}
+                height={200}
+                src={farmStandData.images}
+                alt={farmStandData.vendor_name}
+              />
+            </div>
+            <div className={classes.rightInfo}>
+              <h1>{farmStandData.vendor_name}</h1>
+              <h2>{farmStandData.location_name}</h2>
+              <address>{farmStandData.address}</address>
+              <p>{farmStandData.duration}</p>
+              <p>{farmStandData.hours}</p>
+              <p>{farmStandData.vendor_description}</p>
+              {/* <MapBox point={farmStandData.point.coordinates} /> */}
+            </div>
+          </div>
+        </div>
+        <div className={classes.mapbox}>Mapbox</div>
+      </section>
+      {/* reuseable component section * 2 */}
+    </Fragment>
   );
 }
 

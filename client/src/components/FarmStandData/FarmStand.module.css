@@ -1,0 +1,57 @@
+.mapbox {
+  background-color: red;
+  width: 50%;
+  height: 400px;
+  min-width: 50%;
+}
+
+.headerContainer {
+  margin: 2em;
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+.storeInfo {
+  border: 1px solid blue;
+  width: 50%;
+}
+.img {
+  width: 300px;
+  border-radius: 10px;
+}
+.leftContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  background-color: white;
+}
+.rightInfo {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.leftInfo {
+  display: flex;
+}
+
+body {
+  background-color: rgb(240, 248, 248);
+}
+
+.rightInfo h1,
+h2 {
+  text-align: center;
+}
+.rightInfo h1 {
+  font-size: 1em;
+}
+
+.rightInfo h2 {
+  font-size: 1em;
+}
+
+.rightInfo address {
+  color: rgb(116, 115, 115);
+  font-size: 0.8em;
+}

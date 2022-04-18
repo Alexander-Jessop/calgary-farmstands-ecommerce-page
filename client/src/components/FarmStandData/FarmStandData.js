@@ -23,7 +23,6 @@ const FarmStandData = (props) => {
   function selectedFarmStand(id) {
     console.log("selected donation id", id);
     navigate("/locationId/" + id);
-    // setSelectedDonationId(id);
   }
 
   return (
