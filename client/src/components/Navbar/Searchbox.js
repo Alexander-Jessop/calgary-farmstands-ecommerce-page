@@ -6,7 +6,7 @@ const Searchbox = () => {
     let newValue = event.target.value;
     setSearchTerm(newValue);
   };
-  console.log(searchTerm);
+
   return (
     <div>
       <input

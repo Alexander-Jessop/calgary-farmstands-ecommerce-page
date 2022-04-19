@@ -1,7 +1,7 @@
 const mongoose = require("../mongoose");
 const { Schema, model } = mongoose;
 const userSchema = new Schema({
-  Username: String, // String is shorthand for {type: String}
+  Username: String,
   Password: String,
   farmstand_id: { type: String },
 });
