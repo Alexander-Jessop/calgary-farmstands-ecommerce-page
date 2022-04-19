@@ -4,6 +4,7 @@ const app = express();
 const axios = require("axios");
 //REQUIRES^
 // app.use(logger("dev"));
+const mongoose = require('./db/mongoose');
 
 app.get("/", async (req, res) => {
   res.send("Hello Team!");
