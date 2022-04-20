@@ -3,9 +3,6 @@ import Map, { Marker } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { FaStore } from "react-icons/fa";
 
-const MAPBOX_TOKEN =
-  "pk.eyJ1IjoiYWotZWgiLCJhIjoiY2wxZTU1Y2JoMDBmdTNrbmsyeWp1dzNvZCJ9.AaCnckBvxjwUXZWQQtC4gQ";
-
 function Mapbox(props) {
   return (
     <Fragment>
@@ -17,7 +14,7 @@ function Mapbox(props) {
         }}
         style={{ width: 600, height: 400 }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
-        mapboxAccessToken={MAPBOX_TOKEN}
+        mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
       >
         <Marker longitude={props.long} latitude={props.lat} anchor="bottom">
           <FaStore style={{ fontSize: "30px" }} />
