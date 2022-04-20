@@ -36,6 +36,7 @@ const FarmerLogin = () => {
           <form onSubmit={handleSubmit}>
             <label htmlFor="username">
               Username:
+            </label>
               <input
                 type="text"
                 id="username"
@@ -44,10 +45,10 @@ const FarmerLogin = () => {
                 value={farmer}
                 required
               />
-            </label>
             <p />
             <label htmlFor="password">
               Password:
+            </label>
               <input
                 type={showPass ? "text" : "password"}
                 id="password"
@@ -56,7 +57,6 @@ const FarmerLogin = () => {
                 required
               />
               <FaEye className="eye" onClick={togglePasswordVis} />
-            </label>
             <p />
             <label htmlFor="submit">
               <input type="submit" id="submit" value="Sign In" />

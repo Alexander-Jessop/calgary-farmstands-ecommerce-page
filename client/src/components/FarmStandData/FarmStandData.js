@@ -21,7 +21,6 @@ const FarmStandData = (props) => {
   }, []);
 
   function selectedFarmStand(id) {
-    console.log("selected donation id", id);
     navigate("/locationId/" + id);
   }
 
@@ -61,22 +60,3 @@ const FarmStandData = (props) => {
 };
 
 export default FarmStandData;
-
-//   return (
-//     <FarmStandCard>
-//       <main>
-//         {farmStandData.map((farmStand) => (
-
-//           <FarmStand <---change to another component name
-//             key={farmStand.id}
-//             farmStandSelected={() => selectedFarmStand(farmStand.id)}
-//             images={farmStand.images}
-//             vendor_name={farmStand.vendor_name}
-//             community={farmStand.community}
-//             address={farmStand.address}
-//           />
-//         ))}
-//       </main>
-//     </FarmStandCard>
-//   );
-// };
