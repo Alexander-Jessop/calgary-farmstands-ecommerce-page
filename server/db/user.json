@@ -1,0 +1,22 @@
+[
+  {
+    "username": "Ironman",
+    "password": 1234567,
+    "email": "test@mail.com"
+  },
+  {
+    "username": "Spiderman",
+    "password": 7654321,
+    "email": "dbtest@mail.com"
+  },
+  {
+    "username": "Wonder Woman",
+    "password": 9876543,
+    "email": "dbtest@mail.com"
+  },
+  {
+    "username": "Hulk",
+    "password": 1234567,
+    "email": "dbtest@mail.com"
+  }
+]

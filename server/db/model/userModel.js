@@ -1,9 +1,16 @@
 const mongoose = require("../mongoose");
 const { Schema, model } = mongoose;
 const userSchema = new Schema({
-  Username: String, // String is shorthand for {type: String}
-  Password: String,
-  farmstand_id: { type: String },
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  emailAddress: [String],
 });
 const UserModel = model("User", userSchema);
 

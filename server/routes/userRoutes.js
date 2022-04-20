@@ -18,15 +18,15 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   const newUserModel = req.body;
-  debug(`adding new userModel: ${newUserModel.name}`);
+  debug(`adding new userModel: ${newUserModel.username}`);
   try {
     const addedUserModel = await createUserModel(newUserModel);
     debug(
-      `added new userModel: ${addedUserModel.name} with _id ${addedUserModel._id}`
+      `added new userModel: ${addedUserModel.username} with _id ${addedUserModel._id}`
     );
     res.send(addedUserModel);
   } catch (err) {
-    debug(`failed to add new userModel: ${newUserModel.name}`);
+    debug(`failed to add new userModel: ${newUserModel.username}`);
     debug(err.message);
   }
 });
