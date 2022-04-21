@@ -13,7 +13,7 @@ const itemsArray = [
     id: "m2",
     name: "Schnitzel",
     description: "Lorem IpsumLorem Ipsum",
-    price: 16.5,
+    price: 16.99,
   },
   {
     id: "m3",
@@ -31,19 +31,19 @@ const itemsArray = [
 
 function Products(props) {
   return (
-    <section className={classes.sectionjunk}>
+    <section className={classes.section}>
       <Card>
         <h1>Products</h1>
         {itemsArray.map((item) => (
           <div className={classes.products} key={item.id}>
             <div>
-              <p className={classes.productName}>{item.name}</p>
-              <p>{item.description}</p>
-              <p>{item.price}</p>
+              <h2 className={classes.productName}>{item.name}</h2>
+              <p className={classes.price}>{item.price}</p>
             </div>
-            <div className={classes.formjunk}>
+            <p className={classes.description}>{item.description}</p>
+            <div className={classes.formContainer}>
               <form>
-                <input type="number" placeholder="Quantity" min="0" max="5" />
+                <input type="number" placeholder="Qty" min="0" max="5" />
                 <button>Submit</button>
               </form>
             </div>

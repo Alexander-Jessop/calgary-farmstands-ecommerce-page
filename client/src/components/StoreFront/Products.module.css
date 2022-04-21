@@ -1,33 +1,45 @@
-.sectionjunk {
+.section {
   width: 500px;
   margin: 0 auto;
 }
 .products {
-  height: 10em;
-  border: 2px solid rgb(255, 0, 0);
+  background-color: rgb(240, 248, 248);
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 5px 14px 1px rgba(0, 0, 0, 0.3);
+  padding: 0.5rem;
+  margin: 1rem 0;
+  border-radius: 12px;
 }
 
 .productName {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: bold;
 }
 
-.formjunk {
-  border: 2px solid rgb(255, 0, 0);
+.formContainer {
   display: flex;
   justify-content: right;
 }
 
 form {
-  border: 2px solid red;
+  width: 60px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-button {
-  width: 75px;
+.price {
+  text-align: center;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.description {
+  width: 10em;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
