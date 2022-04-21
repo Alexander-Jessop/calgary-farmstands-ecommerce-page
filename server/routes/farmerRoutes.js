@@ -59,5 +59,46 @@ router.post("/", async (req, res) => {
   }
 });
 
+//Login endpoint
+router.post("/login", async (req, res) => {
+  try {
+    const { username, email, password } = req.body;
+    console.log(username, password);
+    if (!username || !password) {
+      return res.status(400).json({ error: "Please fill out all fields" });
+    };
+    const existingFarmer = await FarmerModel.findOne({ username, email });
+    if (!existingFarmer || !email)
+      return res.status(400).json({ error: "Username or password is incorrect" })
+    const passwordCorrect = await bcrypt.compare(
+      password,
+      existingFarmer.passwordHash
+    );
+    if (!passwordCorrect)
+      return res.status(401).json({ error: "Wrong username or password" });
+    const token = jwt.sign(
+      {
+        Farmer: existingFarmer._id,
+      },
+      process.env.JWT_SECRET
+    );
+    console.log("JSON WEB TOKEN:", token);
+    res.cookie("token", token, {
+      httpOnly: true,
+    }).send()
+  } catch (err) {
+    console.log(err.message);
+    res.status(500).send();
+  }
+});
+
+//Clearing the cookies and logging out
+router.get('/logout', (req, res) => {
+  res.cookie("token", "", {
+    httpOnly: true,
+    expires: new Date(0),
+  }).send()
+});
+
 
 module.exports = router;

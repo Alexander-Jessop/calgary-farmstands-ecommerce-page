@@ -3,7 +3,8 @@ const logger = require("morgan");
 const app = express();
 const axios = require("axios");
 const mongoose = require("./db/mongoose");
-app.use(logger("dev"));
+const cookieParser = require("cookie-parser");
+// app.use(logger("dev"));
 
 const farmerLogin = require("./routes/farmerRoutes");
 
@@ -11,6 +12,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/sign-in", farmerLogin);
+
+app.use(cookieParser());
 
 app.get("/", async (req, res) => {
   res.send("Hello Team!");
