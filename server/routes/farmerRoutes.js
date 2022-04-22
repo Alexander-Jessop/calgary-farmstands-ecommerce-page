@@ -62,13 +62,13 @@ router.post("/", async (req, res) => {
 //Login endpoint
 router.post("/login", async (req, res) => {
   try {
-    const { username, email, password } = req.body;
+    const { username, password } = req.body;
     console.log(username, password);
     if (!username || !password) {
       return res.status(400).json({ error: "Please fill out all fields" });
     };
-    const existingFarmer = await FarmerModel.findOne({ username, email });
-    if (!existingFarmer || !email)
+    const existingFarmer = await FarmerModel.findOne({ username });
+    if (!existingFarmer)
       return res.status(400).json({ error: "Username or password is incorrect" })
     const passwordCorrect = await bcrypt.compare(
       password,
