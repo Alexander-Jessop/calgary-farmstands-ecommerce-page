@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/Navindex";
 import { Route, Routes } from "react-router-dom";
 import FarmStandDetailPage from "./components/Pages/FarmStandDetailPage";
 import Checkout from "./components/Checkout/Checkout";
+import FarmerInventoryPage from "./components/Pages/FarmerInventoryPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/location" element={<LocationPage />} />
         <Route path="/sign-up" element={"Sign Up Form"} />
         <Route path="/sign-in" element={<FarmerLoginPage />} />
+        <Route path="/inventory" element={<FarmerInventoryPage />} />
         <Route path="/cart" element={<Checkout />} />
         <Route path="/locationId/:id" element={<FarmStandDetailPage />} />
       </Routes>
