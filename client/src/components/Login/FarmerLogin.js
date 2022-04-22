@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaEye } from "react-icons/fa";
+import { Navigate } from "react-router-dom";
 import "./FarmerLogin.css";
 
 const FarmerLogin = () => {
@@ -44,9 +45,7 @@ const FarmerLogin = () => {
     <div>
       {success ? (
         <section>
-          <h1>You are logged in</h1>
-          <p />
-          <a href="#">Go to home page</a>
+          <Navigate to={"/inventory"}></Navigate>
         </section>
       ) : (
         <section>
