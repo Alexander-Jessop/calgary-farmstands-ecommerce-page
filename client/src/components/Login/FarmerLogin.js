@@ -3,19 +3,37 @@ import { FaEye } from "react-icons/fa";
 import "./FarmerLogin.css";
 
 const FarmerLogin = () => {
-  const [farmer, setFarmer] = useState("");
-  const [pwd, setPwd] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [showPass, setshowPass] = useState(false);
   //Just for learning purposes - to be removed
   const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(farmer, pwd);
-    setFarmer("");
-    setPwd("");
+    setUsername("");
+    setPassword("");
     //Placeholder to see action of form submission
     setSuccess(true);
+
+    const loginFarmer = {
+      username: username,
+      password: password,
+    };
+            const data = JSON.stringify(loginFarmer);
+            console.log(`Creating new farmer: ${data}`);
+            const response = await fetch("/sign-in/login", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: data,
+            });
+            if (response.status === 200) {
+              console.log("Successful login");
+            } else {
+              alert("login failed");
+            }
   };
 
   const togglePasswordVis = () => {
@@ -37,27 +55,27 @@ const FarmerLogin = () => {
             <label htmlFor="username">
               Username:
             </label>
+            <p />
               <input
                 type="text"
                 id="username"
                 autoComplete="off"
-                onChange={(e) => setFarmer(e.target.value)}
-                value={farmer}
+                onChange={(e) => setUsername(e.target.value)}
+                value={username}
                 required
               />
-            <p />
             <label htmlFor="password">
               Password:
             </label>
+            <p />
               <input
                 type={showPass ? "text" : "password"}
                 id="password"
-                onChange={(e) => setPwd(e.target.value)}
-                value={pwd}
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
                 required
               />
               <FaEye className="eye" onClick={togglePasswordVis} />
-            <p />
             <label htmlFor="submit">
               <input type="submit" id="submit" value="Sign In" />
             </label>
