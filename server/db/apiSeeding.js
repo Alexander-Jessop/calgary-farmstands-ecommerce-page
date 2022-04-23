@@ -31,6 +31,8 @@ farmStandApi.map(async (farmStandApi) => {
       let inventory = new Inventory({
         hours: resultData[i].hours,
         vendor_name: resultData[i].vendor_name,
+        address: resultData[i].address,
+        community: resultData[i].community,
         product_description: resultData[i].product_description,
       });
 
