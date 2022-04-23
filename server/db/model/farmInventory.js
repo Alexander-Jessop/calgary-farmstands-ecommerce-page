@@ -10,6 +10,14 @@ const InventorySchema = new Schema({
         type: String,
         required: true,
     },
+    adress: {
+        type: String,
+        required: true,
+    },
+    community: {
+        type: String,
+        required: true,
+    },
     product_description: {
         type: String,
     },
