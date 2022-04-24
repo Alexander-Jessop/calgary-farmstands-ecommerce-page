@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Nav,
   NavLink,
@@ -9,12 +9,13 @@ import {
   CartLink,
 } from "./NavbarElement";
 import Searchbox from "./Searchbox";
+import HeaderCartButton from "./HeaderCartButton";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <>
       <Nav>
-        <NavLink to="/home">
+        <NavLink to="/">
           <img src="./images/farmer.png" height={40} />
           <h1>FARMSTANDS</h1>
         </NavLink>
@@ -28,12 +29,7 @@ const Navbar = () => {
         <NavBtn>
           <NavLink to="/sign-up">Sign Up</NavLink>
           <NavBtnLink to="/sign-in">Sign In </NavBtnLink>
-          <NavLink to="/cart">
-            <CartLink>
-              <img src="./images/cart.png" height={40} />
-              <p>Cart</p>
-            </CartLink>
-          </NavLink>
+          <HeaderCartButton onClick={props.onShowCart} />
         </NavBtn>
       </Nav>
     </>
