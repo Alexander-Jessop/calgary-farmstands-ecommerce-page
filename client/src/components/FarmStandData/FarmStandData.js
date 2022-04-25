@@ -47,11 +47,24 @@ const FarmStandData = (props) => {
           {/* dog ear tag to flip card to show data */}
           {/* <ShortenData data={farmStand.vendor_description} /> */}
           <div className={classes.cardButton}>
-            <LocationTxt />
-            <Phone />
-            <Email />
-            <StoreFront />
-            <FavoriteButton />
+            <div style={{ cursor: "pointer" }}>
+              <LocationTxt />
+            </div>
+            <div style={{ cursor: "pointer" }}>
+              <Phone />
+            </div>
+            <div style={{ cursor: "pointer" }}>
+              <Email />
+            </div>
+            <div
+              style={{ cursor: "pointer" }}
+              onClick={() => selectedFarmStand(farmStand.id)}
+            >
+              <StoreFront />
+            </div>
+            <div style={{ cursor: "pointer" }}>
+              <FavoriteButton />
+            </div>
           </div>
         </div>
       ))}
