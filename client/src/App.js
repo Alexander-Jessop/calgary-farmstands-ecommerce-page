@@ -17,11 +17,9 @@ function App() {
   };
 
   return (
-    <React.Fragment>
-      <CartProvider>
-        {cart && <Cart onClose={hideCartHandler} />}
-        <Navbar onShowCart={showCartHandler} />
-      </CartProvider>
+    <CartProvider>
+      {cart && <Cart onClose={hideCartHandler} />}
+      <Navbar onShowCart={showCartHandler} />
       <Routes>
         <Route path="/" element={"Farm"} />
         <Route path="/about" element={"About the FarmStand"} />
@@ -31,7 +29,7 @@ function App() {
         <Route path="/sign-in" element={<FarmerLoginPage />} />
         <Route path="/locationId/:id" element={<FarmStandDetailPage />} />
       </Routes>
-    </React.Fragment>
+    </CartProvider>
   );
 }
 

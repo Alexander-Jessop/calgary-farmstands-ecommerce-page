@@ -32,7 +32,7 @@ const itemsArray = [
 
 function AvailableProduct() {
   const productList = itemsArray.map((product) => (
-    <ProductItem product={product} />
+    <ProductItem product={product} key={product.id} />
   ));
 
   return (

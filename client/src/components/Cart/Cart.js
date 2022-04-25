@@ -6,13 +6,13 @@ import CartContext from "../Store/cart-context";
 
 function Cart(props) {
   const cartContext = useContext(CartContext);
-  const totalAmount = `$${cartContext.totalAmount.tofixed(2)}`;
+  const totalAmount = `$${cartContext.totalAmount.toFixed(2)}`;
   const cartItemRemoveHandler = (id) => {};
   const cartItemAddHandler = (item) => {};
 
   const cartItems = (
     <ul className={classes["cart-items"]}>
-      {cartContext.item.map((item) => (
+      {cartContext.items.map((item) => (
         <CartItem
           key={item.id}
           name={item.name}
