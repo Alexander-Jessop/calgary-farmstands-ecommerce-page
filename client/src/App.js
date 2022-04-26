@@ -25,7 +25,6 @@ function App() {
       <Routes>
         <Route path="/" element={"Farm"} />
         <Route path="/about" element={"About the FarmStand"} />
-        <Route path="/contact-us" element={"Information"} />
         <Route path="/location" element={<LocationPage />} />
         <Route path="/sign-up" element={<ModalDialog />} />
         <Route path="/sign-in" element={<FarmerLoginPage />} />

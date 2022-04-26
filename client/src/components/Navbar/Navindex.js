@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Nav,
   NavLink,
@@ -22,7 +22,6 @@ const Navbar = (props) => {
         <Bars />
         <NavMenu>
           <NavLink to="/about">About</NavLink>
-          <NavLink to="/contact-us">Contact Us</NavLink>
           <NavLink to="/location">Location</NavLink>
           <Searchbox />
         </NavMenu>
