@@ -7,6 +7,7 @@ import FarmStandDetailPage from "./components/Pages/FarmStandDetailPage";
 import Cart from "./components/Cart/Cart";
 import CartProvider from "./components/Store/CartProvider";
 import FarmerInventoryPage from "./components/Pages/FarmerInventoryPage";
+import ModalDialog from "./components/Signup/ModalDialog";
 
 function App() {
   const [cart, setCart] = useState(false);
@@ -26,7 +27,7 @@ function App() {
         <Route path="/about" element={"About the FarmStand"} />
         <Route path="/contact-us" element={"Information"} />
         <Route path="/location" element={<LocationPage />} />
-        <Route path="/sign-up" element={"Sign Up Form"} />
+        <Route path="/sign-up" element={<ModalDialog />} />
         <Route path="/sign-in" element={<FarmerLoginPage />} />
         <Route path="/inventory" element={<FarmerInventoryPage />} />
         <Route path="/locationId/:id" element={<FarmStandDetailPage />} />
