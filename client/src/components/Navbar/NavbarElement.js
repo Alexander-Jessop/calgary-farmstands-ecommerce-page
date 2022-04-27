@@ -20,9 +20,12 @@ export const NavLink = styled(CustomLink)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-
+  margin-left: ${(props) => props.ml};
   &.active {
     color: #15cdfc;
+  }
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
   }
 `;
 
@@ -43,10 +46,17 @@ export const Bars = styled(FaBars)`
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  margin-right: -24px;
+
+  width: 100%;
 
   @media screen and (max-width: 768px) {
-    display: none;
+    display: ${(props) => (props.menuOpen ? "flex" : "none")};
+    flex-direction: ${(props) => (props.menuOpen ? "column" : "row")};
+    position: ${(props) => (props.menuOpen ? "absolute" : "unset")};
+    ${(props) =>
+      props.menuOpen
+        ? "width: max-content;right: 0; height: 50%;background-color: black;top: 50px;"
+        : ""}
   }
 `;
 
@@ -62,7 +72,7 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(Link)`
   border-radius: 4px;
-  background: #256ce1;
+  background: ${(props) => (props.menuOpen ? "inherit" : "#256ce1")};
   padding: 10px 22px;
   color: #fff;
   border: none;

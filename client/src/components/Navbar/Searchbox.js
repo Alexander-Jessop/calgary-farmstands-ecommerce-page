@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-
+import styled from "styled-components";
+const Search = styled.div`
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
 const Searchbox = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const updateSearchTerm = (event) => {
@@ -8,7 +13,7 @@ const Searchbox = () => {
   };
 
   return (
-    <div>
+    <Search>
       <input
         id="global-search-input"
         name="q"
@@ -19,7 +24,7 @@ const Searchbox = () => {
         value={searchTerm}
         onChange={updateSearchTerm}
       />
-    </div>
+    </Search>
   );
 };
 
