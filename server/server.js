@@ -8,11 +8,12 @@ const cookieParser = require("cookie-parser");
 
 const farmerLogin = require("./routes/farmerRoutes");
 const farmerInventory = require("./routes/farmerInventory")
-
+const userRouter= require("./routes/userRoutes")
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/sign-in", farmerLogin);
+app.use("/users", userRouter);
 app.use("/inventory", farmerInventory);
 
 app.use(cookieParser());

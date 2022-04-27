@@ -3,7 +3,7 @@ const debug = require("debug")("server:mongoose");
 
 require("dotenv").config();
 const connectionString =
-  process.env.MONGO_URL || "mongodb://localhost:27017/farmstand";
+  process.env.MONGO_URL || "mongodb://localhost:27017/FarmerStand";
 console.log("CHECKSTRING", connectionString);
 mongoose.connect(connectionString);
 () => {
