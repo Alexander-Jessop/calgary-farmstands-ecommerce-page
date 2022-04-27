@@ -1,16 +1,17 @@
 const express = require("express");
 const router = express.Router();
 
-const { createInventory } = require("../db/model/farmInventory");
+const { createInventory, getFarmStandById } = require("../db/model/farmInventory");
 
 const auth = require("../middleware/auth");
 
 //GET method to retrieve farmstand inventory by Id
 router.get("/:id", async (req, res) => {
+    const id = req.params.id
     try {
-        const inventory = await Inventory.findById(req.params.id);
-        res.send(inventory);
-        console.log(`Farmer information and inventory is: ${inventory}`);
+        const readInventory = await getFarmStandById(id);
+        res.send(readInventory);
+        console.log(`Farmer information and inventory is: ${readInventory}`);
     } catch (err) {
         console.log(err.message);
         res.status(500).send();
