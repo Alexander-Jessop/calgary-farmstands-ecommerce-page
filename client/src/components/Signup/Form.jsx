@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, makeStyles, Avatar, TextField } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import Radio from "@material-ui/core/Radio";
@@ -32,15 +32,53 @@ const Form = ({ handleClose }) => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [gender, setGender] = useState("");
   const avatarStyle = { backgroundColor: "#1bbd7e" };
   const GenderStyle = { width: "100%", margin: "5px 0 0 18px" };
+  const [userList, setUserList] = useState();
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    if (userList) {
+      setFirstName(userList.firstName);
+      setLastName(userList.lastName);
+      setEmail(userList.email);
+      setPassword(userList.password);
+      setGender(userList.gender);
+
+      console.log(`userList is:`, userList);
+    }
+  }, [userList]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(firstName, lastName, email, password);
+    const newUser = {
+      firstName,
+      lastName,
+      email,
+      password,
+      gender,
+    };
+    console.log(newUser);
+    const data = JSON.stringify(newUser);
+    let response = await fetch("/users/sign-up", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: data,
+    });
+    let user = await response.json();
+    console.log(user);
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPassword("");
+    setGender("");
+
+    console.log(firstName, lastName, email, password, gender);
     handleClose();
   };
-
+  console.log(gender);
   return (
     <form className={classes.root} onSubmit={handleSubmit}>
       <h1>
@@ -79,7 +117,11 @@ const Form = ({ handleClose }) => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <FormControl component="fieldset" style={GenderStyle}>
+      <FormControl
+        component="fieldset"
+        style={GenderStyle}
+        onChange={(e) => setGender(e.target.value)}
+      >
         <FormLabel component="legend">Gender</FormLabel>
         <RadioGroup
           aria-label="gender"

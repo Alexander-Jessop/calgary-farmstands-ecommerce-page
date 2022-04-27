@@ -1,7 +1,12 @@
 const mongoose = require("../mongoose");
 const { Schema, model } = mongoose;
 const userSchema = new Schema({
-  username: {
+  firstName: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  lastName: {
     type: String,
     required: true,
     unique: true,
@@ -10,7 +15,14 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  emailAddress: [String],
+  emailAddress: {
+    type: [String],
+    required: true,
+  },
+  gender: {
+    type: String,
+    enum: ["male", "female"],
+  },
 });
 const UserModel = model("User", userSchema);
 
