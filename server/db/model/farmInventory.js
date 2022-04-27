@@ -40,11 +40,18 @@ const InventorySchema = new Schema({
 
 const Inventory = mongoose.model("inventory", InventorySchema);
 
+//Function to Read FarmStand data by id
+const getFarmStandById = async (_id) => {
+    const viewFarmStand = await Inventory.findById(_id);
+    return viewFarmStand;
+}
+
+
 //Function to create new inventory items in MongoDB.
 const createInventory = async (inventory) => {
     const newInventory = await Inventory.create(inventory);
     return newInventory;
 };
 
-module.exports = { createInventory };
+module.exports = { createInventory, getFarmStandById };
 
