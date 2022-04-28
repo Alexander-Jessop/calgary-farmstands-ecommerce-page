@@ -5,8 +5,8 @@ const InventoryCreationForm = () => {
   const [fruitToAdd, setFruitToAdd] = useState([]);
   const [vegtable, setVegtable] = useState([]);
   const [vegtableToAdd, setVegtableToAdd] = useState([]);
-  const [poultry, setPoultry] = useState([]);
-  const [poultryToAdd, setPoultryToAdd] = useState([]);
+  const [meats, setMeats ] = useState([]);
+  const [meatsToAdd, setMeatsToAdd] = useState([]);
   const [grains, setGrains] = useState([]);
   const [grainsToAdd, setGrainsToAdd] = useState([]);
   const [dairy, setDairy] = useState([]);
@@ -25,9 +25,9 @@ const InventoryCreationForm = () => {
     });
   };
 
-  const addPoultry = () => {
-    setPoultry((curr) => {
-      return [...curr, poultryToAdd];
+  const addMeats = () => {
+    setMeats((curr) => {
+      return [...curr, meatsToAdd];
     });
   };
 
@@ -44,12 +44,14 @@ const InventoryCreationForm = () => {
     };
 
     const updateInventory = async () => {
-        const newProducts = {
-            fruits: fruit,
-            vegtables: vegtable,
-            poultry: poultry,
-            grains: grains,
-            dairy: dairy,
+      const newProducts = {
+        products: {
+          fruits: fruit,
+          vegtables: vegtable,
+          meats: meats,
+          grains: grains,
+          dairy: dairy,
+        }
         };
 
         const data = JSON.stringify(newProducts);
@@ -103,21 +105,21 @@ const InventoryCreationForm = () => {
           Add
         </button>
         <br />
-        <label htmlFor="poultry">Poultry:</label>
+        <label htmlFor="meat">Meat:</label>
         <ul>
-          {poultry.map((poultry) => {
-            return <li>{poultry}</li>;
+          {meats.map((meats) => {
+            return <li>{meats}</li>;
           })}
         </ul>
         <input
           type="text"
-          id="poultry"
+          id="meats"
           onChange={(e) => {
-            setPoultryToAdd(e.target.value);
+            setMeatsToAdd(e.target.value);
           }}
-          value={poultryToAdd}
+          value={meatsToAdd}
         />
-        <button type="button" onClick={addPoultry}>
+        <button type="button" onClick={addMeats}>
           Add
         </button>
         <br />
