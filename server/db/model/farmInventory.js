@@ -21,22 +21,25 @@ const InventorySchema = new Schema({
     product_description: {
         type: String,
     },
-    fruits: {
-        type: [String],
+
+    products: {
+        type: [{
+            fruits: [String],
+            vegtables: [String],
+            meats: [String],
+            grains: [String],
+            dairy: [String],
+        }]
     },
-    vegtables: {
-        type: [String],
-    },
-    poultry: {
-        type: [String],
-    },
-    grains: {
-        type: [String],
-    },
-    dairy: {
-        type: [String],
-    },
-});
+
+    id: String,
+
+    prices: [Number],
+
+    description: String,
+
+},
+    {timestamps: true});
 
 const Inventory = mongoose.model("inventory", InventorySchema);
 
