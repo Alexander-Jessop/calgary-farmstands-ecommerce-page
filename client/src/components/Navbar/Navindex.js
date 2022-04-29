@@ -17,6 +17,10 @@ const Navbar = (props) => {
   function openHamburger() {
     setMenuOpen((curr) => !curr);
   }
+  function onShowCart() {
+    props.onShowCart();
+    openHamburger();
+  }
   return (
     <>
       <Nav>
@@ -26,16 +30,20 @@ const Navbar = (props) => {
         </NavLink>
         <Bars onClick={openHamburger} />
         <NavMenu menuOpen={menuOpen}>
-          <NavLink ml={"auto"} to="/about">
+          <NavLink ml={"auto"} to="/about" onClick={openHamburger}>
             About
           </NavLink>
-          <NavLink to="/location">Location</NavLink>
+          <NavLink to="/location" onClick={openHamburger}>
+            Location
+          </NavLink>
           <Searchbox />
-          <NavLink ml={"auto"} to="/sign-up">
+          <NavLink ml={"auto"} to="/sign-up" onClick={openHamburger}>
             Sign Up
           </NavLink>
-          <NavLink to="/sign-in">Sign In </NavLink>
-          <HeaderCartButton onClick={props.onShowCart} />
+          <NavLink to="/sign-in" onClick={openHamburger}>
+            Sign In{" "}
+          </NavLink>
+          <HeaderCartButton onClick={onShowCart} />
         </NavMenu>
         <NavBtn></NavBtn>
       </Nav>

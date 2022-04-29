@@ -8,6 +8,8 @@ import Cart from "./components/Cart/Cart";
 import CartProvider from "./components/Store/CartProvider";
 import FarmerInventoryPage from "./components/Pages/FarmerInventoryPage";
 import ModalDialog from "./components/Signup/ModalDialog";
+import HomePage from "./components/HomePage";
+import AboutUs from "./components/AboutUs";
 
 function App() {
   const [cart, setCart] = useState(false);
@@ -23,8 +25,8 @@ function App() {
       {cart && <Cart onClose={hideCartHandler} />}
       <Navbar onShowCart={showCartHandler} />
       <Routes>
-        <Route path="/" element={"Farm"} />
-        <Route path="/about" element={"About the FarmStand"} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/location" element={<LocationPage />} />
         <Route path="/sign-up" element={<ModalDialog />} />
         <Route path="/sign-in" element={<FarmerLoginPage />} />
