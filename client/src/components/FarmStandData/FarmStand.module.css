@@ -1,5 +1,5 @@
 .mapbox {
-  background-color: red;
+  border: solid 2px red;
   width: 50%;
   height: 400px;
   min-width: 50%;
@@ -22,7 +22,7 @@
 .leftContainer {
   display: flex;
   flex-direction: row;
-  gap: 1em;
+  gap: 0.2em;
   background-color: white;
 }
 .rightInfo {

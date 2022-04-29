@@ -1,14 +1,18 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import classes from "./Cart.module.css";
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
 import CartContext from "../Store/cart-context";
 
 function Cart(props) {
+  const navigate = useNavigate();
   const cartContext = useContext(CartContext);
   const totalAmount = `$${cartContext.totalAmount.toFixed(2)}`;
   const cartItemRemoveHandler = (id) => {};
-  const cartItemAddHandler = (item) => {};
+  const cartItemAddHandler = (item) => {
+    cartContext.addItem({ ...item, amount: 1 });
+  };
 
   const cartItems = (
     <ul className={classes["cart-items"]}>
@@ -25,6 +29,10 @@ function Cart(props) {
     </ul>
   );
 
+  function Billing() {
+    navigate("/billing");
+  }
+
   return (
     <Modal onClose={props.onClose}>
       {cartItems}
@@ -36,7 +44,14 @@ function Cart(props) {
         <button className={classes["button--alt"]} onClick={props.onClose}>
           Close
         </button>
-        <button className={classes.button}>Purchase</button>
+        <button
+          style={{ cursor: "pointer" }}
+          onClick={() => Billing()}
+          className={classes.button}
+          onClose={props.onClose}
+        >
+          Purchase
+        </button>
       </div>
     </Modal>
   );

@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./AvailableProduct.module.css";
 import Card from "../UI/Card";
 import ProductItem from "./ProductItem";
+import ProductSummary from "./ProductSummary";
 
 const itemsArray = [
   {
@@ -12,19 +13,19 @@ const itemsArray = [
   },
   {
     id: "m2",
-    name: "Schnitzel",
+    name: "Chicken",
     description: "Lorem IpsumLorem Ipsum",
     price: 16.99,
   },
   {
     id: "m3",
-    name: "Barbecue Burger",
+    name: "Apple",
     description: "Lorem IpsumLorem IpsumLorem Ipsum",
     price: 12.99,
   },
   {
     id: "m4",
-    name: "Green Bowl",
+    name: "Beef",
     description: "Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
     price: 18.99,
   },

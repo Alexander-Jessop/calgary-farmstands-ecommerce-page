@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  margin: auto;
+}
+
+.billing {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 200px;
+}
