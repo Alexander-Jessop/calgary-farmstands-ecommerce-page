@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const { createInventory, getFarmStandById } = require("../db/model/farmInventory");
+const { getFarmStandById } = require("../db/model/farmInventory");
+const { createInventory } = require("../db/model/FarmProducts")
 
 const auth = require("../middleware/auth");
 
@@ -17,6 +18,7 @@ router.get("/:id", async (req, res) => {
         res.status(500).send();
     }
 });
+
 
 //Router to create a new document in MongoDb.
 router.post("/create", async (req, res) => {
