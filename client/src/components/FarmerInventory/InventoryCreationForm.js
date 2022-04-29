@@ -11,6 +11,7 @@ const InventoryCreationForm = () => {
   const [grainsToAdd, setGrainsToAdd] = useState([]);
   const [dairy, setDairy] = useState([]);
   const [dairyToAdd, setDairyToAdd] = useState([]);
+  const [discription, setDiscription] = useState("");
 
   //Function that will add Fruit to a list when button is pressed
   const addFruit = () => {
@@ -45,6 +46,7 @@ const InventoryCreationForm = () => {
 
     const updateInventory = async () => {
       const newProducts = {
+        description: discription,
         products: {
           fruits: fruit,
           vegtables: vegtable,
@@ -159,6 +161,15 @@ const InventoryCreationForm = () => {
           Add
         </button>
         <br />
+        <label htmlFor="description">Description:</label><br />
+        <textarea
+          id="description"
+          rows="4"
+          cols="40"
+          placeholder="What do you want people to know about your locally grown food"
+          onChange={(e) => setDiscription(e.target.value)}
+          value={discription}
+          /><br />
         <button onClick={updateInventory}>submit</button>
       </form>
     </div>
