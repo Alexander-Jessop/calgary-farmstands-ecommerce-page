@@ -20,24 +20,7 @@ const InventorySchema = new Schema({
     },
     product_description: {
         type: String,
-    },
-
-    products: {
-        type: [{
-            fruits: [String],
-            vegtables: [String],
-            meats: [String],
-            grains: [String],
-            dairy: [String],
-        }]
-    },
-
-    id: String,
-
-    prices: [Number],
-
-    description: String,
-
+    }
 },
     {timestamps: true});
 
@@ -49,12 +32,5 @@ const getFarmStandById = async (_id) => {
     return viewFarmStand;
 }
 
-
-//Function to create new inventory items in MongoDB.
-const createInventory = async (inventory) => {
-    const newInventory = await Inventory.create(inventory);
-    return newInventory;
-};
-
-module.exports = { createInventory, getFarmStandById };
+module.exports = {getFarmStandById};
 
