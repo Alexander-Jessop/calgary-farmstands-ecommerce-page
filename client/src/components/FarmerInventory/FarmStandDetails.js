@@ -7,7 +7,7 @@ const FarmStandDetails = (props) => {
 
   useEffect(() => {
     const farmStandInfo = async () => {
-      let response = await fetch(`/inventory/${id}`);
+      let response = await fetch(`/farmInfo/${id}`);
       let data = await response.json();
       setStandInfo(data);
     };

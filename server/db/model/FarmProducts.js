@@ -25,11 +25,18 @@ const ProductSchema = new Schema({
 
 const Products = mongoose.model("product", ProductSchema);
 
+//Function to Read FarmStand data by id
+const getProductById = async (_id) => {
+    const viewProduct = await Products.findById(_id);
+    return viewProduct;
+}
+
 //Function that will create new products
 const createInventory = async (products) => {
   const newInventory = await Products.create(products);
   return newInventory;
 };
+
 
 //Function that will update products by ID
 const updateProduct = async (_id, updateData) => {
@@ -39,4 +46,4 @@ const updateProduct = async (_id, updateData) => {
     return updatedProduct
 }
 
-module.exports = { createInventory, updateProduct };
+module.exports = { createInventory, updateProduct, getProductById };

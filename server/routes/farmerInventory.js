@@ -1,22 +1,21 @@
 const express = require("express");
 const router = express.Router();
 
-const { getFarmStandById } = require("../db/model/farmInventory");
-const { createInventory, updateProduct } = require("../db/model/FarmProducts")
+const { createInventory, updateProduct, getProductById } = require("../db/model/FarmProducts")
 
 const auth = require("../middleware/auth");
 
-//GET method to retrieve farmstand inventory by Id
+//Router to read newly created document
 router.get("/:id", async (req, res) => {
-    const id = req.params.id
-    try {
-        const readInventory = await getFarmStandById(id);
-        res.send(readInventory);
-        console.log(`Farmer information and inventory is: ${readInventory}`);
-    } catch (err) {
-        console.log(err.message);
-        res.status(500).send();
-    }
+  const id = req.params.id;
+  try {
+    const readProduct = await getProductById(id);
+    res.send(readProduct);
+    console.log(`Farmer information and inventory is: ${readProduct}`);
+  } catch (err) {
+    console.log(err.message);
+    res.status(500).send();
+  }
 });
 
 //Router to create a new document in MongoDb.
@@ -30,6 +29,8 @@ router.post("/create", async (req, res) => {
         console.log(err.message);
     }
 });
+
+
 
 //Router to update an existing document
 router.put("/:id", async (req, res) => {
