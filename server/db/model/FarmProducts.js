@@ -25,9 +25,18 @@ const ProductSchema = new Schema({
 
 const Products = mongoose.model("product", ProductSchema);
 
+//Function that will create new products
 const createInventory = async (products) => {
   const newInventory = await Products.create(products);
   return newInventory;
 };
 
-module.exports = { createInventory };
+//Function that will update products by ID
+const updateProduct = async (_id, updateData) => {
+    const updatedProduct = await Products.findByIdAndUpdate(_id, updateData, {
+        new: true,
+    });
+    return updatedProduct
+}
+
+module.exports = { createInventory, updateProduct };
