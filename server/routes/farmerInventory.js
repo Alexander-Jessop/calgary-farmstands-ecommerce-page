@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const { getFarmStandById } = require("../db/model/farmInventory");
-const { createInventory } = require("../db/model/FarmProducts")
+const { createInventory, updateProduct } = require("../db/model/FarmProducts")
 
 const auth = require("../middleware/auth");
 
@@ -19,7 +19,6 @@ router.get("/:id", async (req, res) => {
     }
 });
 
-
 //Router to create a new document in MongoDb.
 router.post("/create", async (req, res) => {
     const newInventory = req.body;
@@ -29,6 +28,21 @@ router.post("/create", async (req, res) => {
         res.send(newInventory);
     } catch (err) {
         console.log(err.message);
+    }
+});
+
+//Router to update an existing document
+router.put("/:id", async (req, res) => {
+    const id = req.params.id;
+    const updateData = req.body;
+    try {
+        const updatedProduct = await updateProduct(id, updateData);
+        console.log(`Updated product with id ${updatedProduct._id} to ${updatedProduct}`);
+        res.send(updatedProduct);
+    } catch (err) {
+        console.log("Failed to edit product");
+        console.log(err.message);
+        res.status(500).send()
     }
 });
 
