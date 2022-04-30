@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { createInventory, updateProduct, getProductById } = require("../db/model/FarmProducts")
+const { createInventory, updateProduct, getProductById, deleteProduct } = require("../db/model/FarmProducts")
 
 const auth = require("../middleware/auth");
 
@@ -45,6 +45,19 @@ router.put("/:id", async (req, res) => {
         console.log(err.message);
         res.status(500).send()
     }
+});
+
+//Router that will delete an existin document
+router.delete("/:id", async (req, res) => {
+  const id = req.params.id;
+  try {
+    const deletedProduct = await deleteProduct(id);
+    console.log(`Deleted product with id ${deletedProduct._id}`);
+    res.send(deletedProduct);
+  } catch (err) {
+    console.log(err.message);
+    res.status(500).send();
+  };
 });
 
 

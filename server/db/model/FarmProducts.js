@@ -46,4 +46,10 @@ const updateProduct = async (_id, updateData) => {
     return updatedProduct
 }
 
-module.exports = { createInventory, updateProduct, getProductById };
+//Function that will delete products by ID
+const deleteProduct = async (_id) => {
+    const deletedProduct = await Products.findByIdAndDelete(_id);
+    return deletedProduct
+};
+
+module.exports = { createInventory, updateProduct, getProductById, deleteProduct };
