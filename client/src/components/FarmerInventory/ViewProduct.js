@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import ProductDeletion from './ProductDeletion';
 
 const ViewProduct = (props) => {
   const id = props.id;
@@ -40,6 +41,8 @@ const ViewProduct = (props) => {
         <br />
         <label>Description: </label>
         <span>{productInfo.description}</span>
+        <br />
+        <ProductDeletion id={"626ca674572cb8d4895dcf19"} />
       </div>
     </div>
   );
