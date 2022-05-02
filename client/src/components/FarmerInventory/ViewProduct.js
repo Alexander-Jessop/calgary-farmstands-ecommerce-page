@@ -44,7 +44,7 @@ const ViewProduct = (props) => {
         <label>Description: </label>
         <span>{productInfo.description}</span>
         <br />
-        <ProductDeletion id={"626d7278cd475dbb05451d28"} />
+        <ProductDeletion id={"626cb5bd8d8de9ca288265dc"} />
         <button onClick={() => navigate(`/inventory-update/${id}`)}>
           Update
         </button>
