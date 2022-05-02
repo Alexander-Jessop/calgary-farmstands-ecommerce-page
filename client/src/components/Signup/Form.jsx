@@ -58,7 +58,7 @@ const Form = ({ handleClose }) => {
       password,
       gender,
     };
-    console.log(newUser);
+    console.log("newUser", newUser);
     const data = JSON.stringify(newUser);
     let response = await fetch("/users/sign-up", {
       method: "POST",
@@ -68,7 +68,7 @@ const Form = ({ handleClose }) => {
       body: data,
     });
     let user = await response.json();
-    console.log(user);
+    console.log("user", user);
     setFirstName("");
     setLastName("");
     setEmail("");

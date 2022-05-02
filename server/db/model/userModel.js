@@ -15,7 +15,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  emailAddress: {
+  email: {
     type: [String],
     required: true,
   },
@@ -27,6 +27,7 @@ const userSchema = new Schema({
 const UserModel = model("User", userSchema);
 
 const createUserModel = async (userModel) => {
+  console.log("userModel:", JSON.stringify(userModel));
   const newUserModel = await UserModel.create(userModel);
   return newUserModel;
 };
