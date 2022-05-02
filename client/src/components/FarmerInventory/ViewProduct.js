@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import ProductDeletion from './ProductDeletion';
 
 const ViewProduct = (props) => {
   const id = props.id;
   const [productInfo, setProductInfo] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const productInfo = async () => {
@@ -42,7 +44,10 @@ const ViewProduct = (props) => {
         <label>Description: </label>
         <span>{productInfo.description}</span>
         <br />
-        <ProductDeletion id={"626ca674572cb8d4895dcf19"} />
+        <ProductDeletion id={"626d7278cd475dbb05451d28"} />
+        <button onClick={() => navigate(`/inventory-update/${id}`)}>
+          Update
+        </button>
       </div>
     </div>
   );

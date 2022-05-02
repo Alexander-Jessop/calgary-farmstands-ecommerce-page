@@ -11,6 +11,7 @@ import ModalDialog from "./components/Signup/ModalDialog";
 import HomePage from "./components/HomePage";
 import AboutUs from "./components/AboutUs";
 import Billing from "./components/Cart/Billing";
+import ProductUpdate from "./components/FarmerInventory/ProductUpdate";
 
 function App() {
   const [cart, setCart] = useState(false);
@@ -33,6 +34,7 @@ function App() {
         <Route path="/sign-in" element={<FarmerLoginPage />} />
         <Route path="/inventory" element={<FarmerInventoryPage />} />
         <Route path="/locationId/:id" element={<FarmStandDetailPage />} />
+        <Route path="/inventory-update/:id" element={<ProductUpdate />} />
         <Route path="/billing" element={<Billing />} />
       </Routes>
     </CartProvider>
