@@ -35,7 +35,7 @@ const ViewProduct = (props) => {
         <label>Meats: </label>
         <span>{productInfo.products[0].meats}</span>
         <br />
-        <label>Vegtables: </label>
+        <label>Grains: </label>
         <span>{productInfo.products[0].grains}</span>
         <br />
         <label>Dairy: </label>
@@ -44,7 +44,7 @@ const ViewProduct = (props) => {
         <label>Description: </label>
         <span>{productInfo.description}</span>
         <br />
-        <ProductDeletion id={"626cb5bd8d8de9ca288265dc"} />
+        <ProductDeletion id={id} />
         <button onClick={() => navigate(`/inventory-update/${id}`)}>
           Update
         </button>
