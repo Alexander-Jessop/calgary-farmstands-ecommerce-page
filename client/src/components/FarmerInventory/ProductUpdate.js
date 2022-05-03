@@ -15,7 +15,6 @@ const ProductUpdate = () => {
   const [dairy, setDairy] = useState([]);
   const [dairyToAdd, setDairyToAdd] = useState([]);
   const [discription, setDiscription] = useState("");
-  const [product, setProduct] = useState();
   const navigate = useNavigate();
 
   const addFruit = () => {
@@ -52,7 +51,12 @@ const ProductUpdate = () => {
     const getProducts = async () => {
       const response = await fetch(`/inventory/${id}`);
       const data = await response.json();
-      setProduct(data);
+      setFruit(data.products[0].fruits);
+      setVegtable(data.products[0].vegtables);
+      setMeats(data.products[0].meats);
+      setGrains(data.products[0].grains);
+      setDairy(data.products[0].dairy);
+      setDiscription(data.description)
     };
     getProducts();
   }, [id]);
@@ -70,20 +74,23 @@ const ProductUpdate = () => {
     };
 
     const data = JSON.stringify(updateProducts);
-    await fetch(`/inventory/${id}`, {
+    const response = await fetch(`/inventory/${id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
       },
       body: data,
     });
+    if (response.status === 200) {
+      navigate("/inventory")
+    }
   };
 
   return (
     <div>
       <h1>Product Update</h1>
 
-      <form>
+      <section>
         <label htmlFor="fruits">Fruits:</label>
         <ul>
           {fruit.map((fruit) => {
@@ -187,7 +194,7 @@ const ProductUpdate = () => {
         <br />
         <button onClick={updateInventory}>Update</button>
         <button onClick={() => navigate("/inventory")}>Cancel</button>
-      </form>
+      </section>
     </div>
   );
 };
