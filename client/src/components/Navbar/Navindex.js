@@ -37,9 +37,7 @@ const Navbar = (props) => {
             Location
           </NavLink>
           <Searchbox />
-          <NavLink ml={"auto"} to="/sign-up" onClick={openHamburger}>
-            Sign Up
-          </NavLink>
+
           <NavLink to="/sign-in" onClick={openHamburger}>
             Sign In{" "}
           </NavLink>
