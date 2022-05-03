@@ -37,18 +37,6 @@ const Form = ({ handleClose }) => {
   const GenderStyle = { width: "100%", margin: "5px 0 0 18px" };
   const [userList, setUserList] = useState();
 
-  useEffect(() => {
-    if (userList) {
-      setFirstName(userList.firstName);
-      setLastName(userList.lastName);
-      setEmail(userList.email);
-      setPassword(userList.password);
-      setGender(userList.gender);
-
-      console.log(`userList is:`, userList);
-    }
-  }, [userList]);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newUser = {

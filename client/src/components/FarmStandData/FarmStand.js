@@ -11,7 +11,7 @@ function FarmStand(props) {
     axios.get(`/api/${props.id}`).then((res) => {
       setFarmStandData(res.data);
     });
-  }, []);
+  }, [props.id]);
 
   return (
     <Fragment>

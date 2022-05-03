@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { Navigate } from "react-router-dom";
 import "./FarmerLogin.css";
+import ModalDialog from "../Signup/ModalDialog";
 
 const FarmerLogin = () => {
   const [username, setUsername] = useState("");
@@ -9,6 +10,7 @@ const FarmerLogin = () => {
   const [showPass, setshowPass] = useState(false);
   //Just for learning purposes - to be removed
   const [success, setSuccess] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,20 +23,20 @@ const FarmerLogin = () => {
       username: username,
       password: password,
     };
-            const data = JSON.stringify(loginFarmer);
-            console.log(`Creating new farmer: ${data}`);
-            const response = await fetch("/sign-in/login", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: data,
-            });
-            if (response.status === 200) {
-              console.log("Successful login");
-            } else {
-              alert("login failed");
-            }
+    const data = JSON.stringify(loginFarmer);
+    console.log(`Creating new farmer: ${data}`);
+    const response = await fetch("/sign-in/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: data,
+    });
+    if (response.status === 200) {
+      console.log("Successful login");
+    } else {
+      alert("login failed");
+    }
   };
 
   const togglePasswordVis = () => {
@@ -51,30 +53,26 @@ const FarmerLogin = () => {
         <section>
           <h1>Sign In</h1>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="username">
-              Username:
-            </label>
+            <label htmlFor="username">Username:</label>
             <p />
-              <input
-                type="text"
-                id="username"
-                autoComplete="off"
-                onChange={(e) => setUsername(e.target.value)}
-                value={username}
-                required
-              />
-            <label htmlFor="password">
-              Password:
-            </label>
+            <input
+              type="text"
+              id="username"
+              autoComplete="off"
+              onChange={(e) => setUsername(e.target.value)}
+              value={username}
+              required
+            />
+            <label htmlFor="password">Password:</label>
             <p />
-              <input
-                type={showPass ? "text" : "password"}
-                id="password"
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-                required
-              />
-              <FaEye className="eye" onClick={togglePasswordVis} />
+            <input
+              type={showPass ? "text" : "password"}
+              id="password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              required
+            />
+            <FaEye className="eye" onClick={togglePasswordVis} />
             <label htmlFor="submit">
               <input type="submit" id="submit" value="Sign In" />
             </label>
@@ -82,7 +80,10 @@ const FarmerLogin = () => {
           </form>
           <h4>Need an account?</h4>
           <p />
-          <a href="#">Sign Up</a>
+          <a href="#" onClick={() => setShowModal(true)}>
+            Sign Up
+          </a>
+          {showModal && <ModalDialog />}
           <p />
           <a href="#">Continue as guest</a>
           <p />

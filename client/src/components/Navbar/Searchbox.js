@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 const Search = styled.div`
   @media screen and (max-width: 768px) {
@@ -11,13 +13,27 @@ const Searchbox = () => {
     let newValue = event.target.value;
     setSearchTerm(newValue);
   };
-  const setSearch = (e) => {
-    alert(`Location:${searchTerm}`);
+  const search = (e) => {
+    if (e.key === "Enter") {
+      let farmStand = farmStandData.find((stand) => {
+        return stand.community.toLowerCase().includes(searchTerm.toLowerCase());
+      });
+      if (farmStand) {
+        navigate(`/locationId/${farmStand.id}`);
+      }
+    }
   };
-
+  const [farmStandData, setFarmStandData] = useState([]);
+  const navigate = useNavigate();
+  console.log(farmStandData);
+  useEffect(() => {
+    axios.get("/api").then((res) => {
+      setFarmStandData(res.data);
+    });
+  }, []);
   return (
     <Search>
-      <form onChange={setSearch}>
+      <div>
         <input
           id="global-search-input"
           name="q"
@@ -27,8 +43,9 @@ const Searchbox = () => {
           autoComplete="off"
           value={searchTerm}
           onChange={updateSearchTerm}
+          onKeyUp={search}
         />
-      </form>
+      </div>
     </Search>
   );
 };
