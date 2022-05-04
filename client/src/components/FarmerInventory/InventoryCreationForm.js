@@ -74,7 +74,7 @@ const InventoryCreationForm = () => {
         <label htmlFor="fruits">Fruits:</label>
         <ul>
           {fruit.map((fruit) => {
-            return <li>{fruit}</li>;
+            return <li key={fruit.toString()}>{fruit}</li>;
           })}
         </ul>
         <input
@@ -92,7 +92,7 @@ const InventoryCreationForm = () => {
         <label htmlFor="vegtables">Vegtables:</label>
         <ul>
           {vegtable.map((vegtable) => {
-            return <li>{vegtable}</li>;
+            return <li key={vegtable.toString()}>{vegtable}</li>;
           })}
         </ul>
         <input
@@ -110,7 +110,7 @@ const InventoryCreationForm = () => {
         <label htmlFor="meat">Meat:</label>
         <ul>
           {meats.map((meats) => {
-            return <li>{meats}</li>;
+            return <li key={meats.toString()}>{meats}</li>;
           })}
         </ul>
         <input
@@ -128,7 +128,7 @@ const InventoryCreationForm = () => {
         <label htmlFor="grains">Grains:</label>
         <ul>
           {grains.map((grains) => {
-            return <li>{grains}</li>;
+            return <li key={grains.toString()}>{grains}</li>;
           })}
         </ul>
         <input
@@ -146,7 +146,7 @@ const InventoryCreationForm = () => {
         <label htmlFor="dairy">Dairy:</label>
         <ul>
           {dairy.map((dairy) => {
-            return <li>{dairy}</li>;
+            return <li key={dairy.toString()}>{dairy}</li>;
           })}
         </ul>
         <input
