@@ -84,10 +84,6 @@ const FarmerLogin = () => {
             Sign Up
           </a>
           {showModal && <ModalDialog />}
-          <p />
-          <a href="#">Continue as guest</a>
-          <p />
-          <a href="#">Forgot Password</a>
         </section>
       )}
     </div>
