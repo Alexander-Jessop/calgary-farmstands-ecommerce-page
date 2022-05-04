@@ -8,3 +8,11 @@
 p {
   padding: 2px;
 }
+
+.password {
+  display: block;
+}
+
+.submit {
+  display: block;
+}
