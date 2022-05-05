@@ -18,7 +18,7 @@ const Inventory = () => {
         Create inventory
       </button>
       {popUpForm && <InventoryCreationForm setPopUpForm={setPopUpForm} />}
-      <ViewProduct id={"626d6812c40356b64872b919"} />
+      <ViewProduct id={"62744d503801e4a2e43c988d"} />
     </div>
   );
 }
