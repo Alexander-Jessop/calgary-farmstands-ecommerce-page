@@ -19,7 +19,7 @@ const FarmStandDetails = (props) => {
     return <p>Loading data...</p>;
   }
   return (
-    <div style={{ height: "80vh", padding: 50 }} className="info">
+    <div style={{ height: "25vh", padding: 50 }} className="info">
       <label>FarmStand id: </label>
       <span>{standInfo._id}</span>
       <br />
