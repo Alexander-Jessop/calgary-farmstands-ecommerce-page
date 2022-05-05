@@ -15,10 +15,10 @@ const Inventory = () => {
           setPopUpForm(true);
         }}
       >
-        Create and edit Inventory
+        Create inventory
       </button>
       {popUpForm && <InventoryCreationForm setPopUpForm={setPopUpForm} />}
-      <ViewProduct id={"626d5ac87479d7a7c8b05b49"} />
+      <ViewProduct id={"626d6812c40356b64872b919"} />
     </div>
   );
 }
