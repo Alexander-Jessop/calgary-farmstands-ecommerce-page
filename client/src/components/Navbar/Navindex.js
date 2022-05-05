@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Nav,
-  NavLink,
-  Bars,
-  NavMenu,
-  NavBtn,
-  NavBtnLink,
-  CartLink,
-} from "./NavbarElement";
+import { Nav, NavLink, Bars, NavMenu, NavBtn } from "./NavbarElement";
 import Searchbox from "./Searchbox";
 import HeaderCartButton from "./HeaderCartButton";
 import { useState } from "react";
@@ -30,20 +22,18 @@ const Navbar = (props) => {
         </NavLink>
         <Bars onClick={openHamburger} />
         <NavMenu menuOpen={menuOpen}>
-          <NavLink ml={"auto"} to="/about" onClick={openHamburger}>
-            About
-          </NavLink>
-          <NavLink to="/location" onClick={openHamburger}>
+          <NavBtn></NavBtn>
+          <NavBtn></NavBtn>
+          <Searchbox />
+          <NavLink ml={"auto"} to="/location" onClick={openHamburger}>
             Location
           </NavLink>
-          <Searchbox />
 
           <NavLink to="/sign-in" onClick={openHamburger}>
             Sign In{" "}
           </NavLink>
           <HeaderCartButton onClick={onShowCart} />
         </NavMenu>
-        <NavBtn></NavBtn>
       </Nav>
     </>
   );

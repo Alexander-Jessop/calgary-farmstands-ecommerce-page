@@ -9,9 +9,9 @@ import CartProvider from "./components/Store/CartProvider";
 import FarmerInventoryPage from "./components/Pages/FarmerInventoryPage";
 import ModalDialog from "./components/Signup/ModalDialog";
 import HomePage from "./components/HomePage";
-import AboutUs from "./components/AboutUs";
 import Billing from "./components/Cart/Billing";
 import ProductUpdate from "./components/FarmerInventory/ProductUpdate";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [cart, setCart] = useState(false);
@@ -28,7 +28,6 @@ function App() {
       <Navbar onShowCart={showCartHandler} />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutUs />} />
         <Route path="/location" element={<LocationPage />} />
         <Route path="/sign-up" element={<ModalDialog />} />
         <Route path="/sign-in" element={<FarmerLoginPage />} />
@@ -37,6 +36,7 @@ function App() {
         <Route path="/inventory-update/:id" element={<ProductUpdate />} />
         <Route path="/billing" element={<Billing />} />
       </Routes>
+      <Footer />
     </CartProvider>
   );
 }

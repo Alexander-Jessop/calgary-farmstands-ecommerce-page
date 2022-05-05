@@ -69,30 +69,3 @@ export const NavBtn = styled.nav`
     display: none;
   }
 `;
-
-export const NavBtnLink = styled(Link)`
-  border-radius: 4px;
-  background: ${(props) => (props.menuOpen ? "inherit" : "#256ce1")};
-  padding: 10px 22px;
-  color: #fff;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-
-  &:hover {
-    transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #010606;
-  }
-`;
-
-export const CartLink = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  p {
-    margin: 0;
-  }
-`;

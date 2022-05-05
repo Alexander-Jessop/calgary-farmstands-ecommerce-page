@@ -44,7 +44,7 @@ const FarmerLogin = () => {
   };
 
   return (
-    <div>
+    <div style={{ height: "80vh", padding: 50 }}>
       {success ? (
         <section>
           <Navigate to={"/inventory"}></Navigate>
@@ -63,6 +63,7 @@ const FarmerLogin = () => {
               value={username}
               required
             />
+            <br />
             <label htmlFor="password">Password:</label>
             <p />
             <input
@@ -74,6 +75,7 @@ const FarmerLogin = () => {
             />
             <FaEye className="eye" onClick={togglePasswordVis} />
             <label htmlFor="submit">
+              <br />
               <input type="submit" id="submit" value="Sign In" />
             </label>
             <p />

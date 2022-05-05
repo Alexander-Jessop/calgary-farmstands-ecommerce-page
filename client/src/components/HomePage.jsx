@@ -3,11 +3,11 @@ import React from "react";
 const HomePage = () => {
   return (
     <div>
-      <div id="home" style={{ position: "relative" }}>
+      <div id="home" style={{ position: "relative", background: "#d7ecd9" }}>
         <h1
           style={{
             position: "absolute",
-            top: "55%",
+            top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
             display: "block",
@@ -22,10 +22,10 @@ const HomePage = () => {
           Connecting Local Farmer's with Local Communities{" "}
           <center>
             {" "}
-            <img src="./images/pic/2.jpg" height={450} width={650} />
+            <img src="./images/pic/2.jpg" height={250} width={350} />
           </center>
         </h1>
-        <img src="./images/pic/field.gif" height={700} width={1600} />
+        <img src="./images/pic/field.gif" height={700} width={1520} />
       </div>
     </div>
   );
