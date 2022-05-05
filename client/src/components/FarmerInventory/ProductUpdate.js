@@ -56,7 +56,7 @@ const ProductUpdate = () => {
       setMeats(data.products[0].meats);
       setGrains(data.products[0].grains);
       setDairy(data.products[0].dairy);
-      setDiscription(data.description)
+      setDiscription(data.description);
     };
     getProducts();
   }, [id]);
@@ -82,12 +82,12 @@ const ProductUpdate = () => {
       body: data,
     });
     if (response.status === 200) {
-      navigate("/inventory")
+      navigate("/inventory");
     }
   };
 
   return (
-    <div style={{ height: "25vh", padding: 50 }}>
+    <div>
       <h1>Product Update</h1>
 
       <section>

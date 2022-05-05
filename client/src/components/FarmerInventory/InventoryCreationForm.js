@@ -5,7 +5,7 @@ const InventoryCreationForm = () => {
   const [fruitToAdd, setFruitToAdd] = useState([]);
   const [vegtable, setVegtable] = useState([]);
   const [vegtableToAdd, setVegtableToAdd] = useState([]);
-  const [meats, setMeats ] = useState([]);
+  const [meats, setMeats] = useState([]);
   const [meatsToAdd, setMeatsToAdd] = useState([]);
   const [grains, setGrains] = useState([]);
   const [grainsToAdd, setGrainsToAdd] = useState([]);
@@ -42,34 +42,32 @@ const InventoryCreationForm = () => {
     setDairy((curr) => {
       return [...curr, dairyToAdd];
     });
+  };
+
+  const updateInventory = async () => {
+    const newProducts = {
+      description: discription,
+      products: {
+        fruits: fruit,
+        vegtables: vegtable,
+        meats: meats,
+        grains: grains,
+        dairy: dairy,
+      },
     };
 
-    const updateInventory = async () => {
-      const newProducts = {
-        description: discription,
-        products: {
-          fruits: fruit,
-          vegtables: vegtable,
-          meats: meats,
-          grains: grains,
-          dairy: dairy,
-        }
-        };
-
-        const data = JSON.stringify(newProducts);
-        await fetch('/inventory/create', {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json",
-            },
-            body: data
-        });
-    };
-    
-    
+    const data = JSON.stringify(newProducts);
+    await fetch("/inventory/create", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: data,
+    });
+  };
 
   return (
-    <div style={{ height: "25vh", padding: 50 }}>
+    <div>
       <form>
         <label htmlFor="fruits">Fruits:</label>
         <ul>
@@ -161,7 +159,8 @@ const InventoryCreationForm = () => {
           Add
         </button>
         <br />
-        <label htmlFor="description">Description:</label><br />
+        <label htmlFor="description">Description:</label>
+        <br />
         <textarea
           id="description"
           rows="4"
@@ -169,7 +168,8 @@ const InventoryCreationForm = () => {
           placeholder="What do you want people to know about your locally grown food"
           onChange={(e) => setDiscription(e.target.value)}
           value={discription}
-          /><br />
+        />
+        <br />
         <button onClick={updateInventory}>submit</button>
       </form>
     </div>

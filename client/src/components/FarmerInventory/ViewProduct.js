@@ -21,7 +21,7 @@ const ViewProduct = (props) => {
     return <p>Loading data...</p>;
   }
   return (
-    <div style={{ height: "25vh", padding: 50 }}>
+    <div>
       <div className="info">
         <label>FarmStand id: </label>
         <span>{productInfo._id}</span>

@@ -1,34 +1,34 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 
 const ProductDeletion = (props) => {
-    const id = props.id;
-    const [deleteProduct, setDeleteProduct] = useState();
+  const id = props.id;
+  const [deleteProduct, setDeleteProduct] = useState();
 
-    useEffect(() => {
-        const getProduct = async () => {
-            let response = await fetch(`/inventory/${id}`);
-            let data = await response.json();
-            setDeleteProduct(data);
-        };
-        getProduct();
-    }, [id]);
-
-    const deleteRecord = async () => {
-        const data = JSON.stringify(deleteProduct);
-        await fetch(`/inventory/${id}`, {
-            method: "DELETE",
-            headers: {
-                "Content-type": "application/json"
-            },
-            body: data,
-        });
+  useEffect(() => {
+    const getProduct = async () => {
+      let response = await fetch(`/inventory/${id}`);
+      let data = await response.json();
+      setDeleteProduct(data);
     };
+    getProduct();
+  }, [id]);
 
-    return (
-        <div style={{ height: "25vh", padding: 50 }}>
-            <button onClick={deleteRecord}>Delete</button>
-        </div>
-    );
+  const deleteRecord = async () => {
+    const data = JSON.stringify(deleteProduct);
+    await fetch(`/inventory/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: data,
+    });
+  };
+
+  return (
+    <div>
+      <button onClick={deleteRecord}>Delete</button>
+    </div>
+  );
 };
 
-export default ProductDeletion
+export default ProductDeletion;
