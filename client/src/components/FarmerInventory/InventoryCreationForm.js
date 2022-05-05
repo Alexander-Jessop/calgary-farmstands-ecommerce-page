@@ -69,7 +69,7 @@ const InventoryCreationForm = () => {
     
 
   return (
-    <div>
+    <div style={{ height: "25vh", padding: 50 }}>
       <form>
         <label htmlFor="fruits">Fruits:</label>
         <ul>

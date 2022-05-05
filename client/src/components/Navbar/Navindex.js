@@ -23,7 +23,9 @@ const Navbar = (props) => {
         <Bars onClick={openHamburger} />
         <NavMenu menuOpen={menuOpen}>
           <NavBtn></NavBtn>
-          <NavBtn></NavBtn>
+          <NavLink ml={"auto"} to="/about" onClick={openHamburger}>
+            About
+          </NavLink>
           <Searchbox />
           <NavLink ml={"auto"} to="/location" onClick={openHamburger}>
             Location

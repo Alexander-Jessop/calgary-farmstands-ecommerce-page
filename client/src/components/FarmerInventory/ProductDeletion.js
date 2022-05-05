@@ -25,7 +25,7 @@ const ProductDeletion = (props) => {
     };
 
     return (
-        <div>
+        <div style={{ height: "25vh", padding: 50 }}>
             <button onClick={deleteRecord}>Delete</button>
         </div>
     );

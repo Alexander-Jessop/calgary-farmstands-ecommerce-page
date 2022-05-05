@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import ProductDeletion from './ProductDeletion';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import ProductDeletion from "./ProductDeletion";
 
 const ViewProduct = (props) => {
   const id = props.id;
@@ -21,7 +21,7 @@ const ViewProduct = (props) => {
     return <p>Loading data...</p>;
   }
   return (
-    <div>
+    <div style={{ height: "25vh", padding: 50 }}>
       <div className="info">
         <label>FarmStand id: </label>
         <span>{productInfo._id}</span>
@@ -51,6 +51,6 @@ const ViewProduct = (props) => {
       </div>
     </div>
   );
-}
+};
 
-export default ViewProduct
+export default ViewProduct;

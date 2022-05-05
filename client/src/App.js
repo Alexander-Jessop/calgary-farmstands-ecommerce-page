@@ -12,6 +12,7 @@ import HomePage from "./components/HomePage";
 import Billing from "./components/Cart/Billing";
 import ProductUpdate from "./components/FarmerInventory/ProductUpdate";
 import Footer from "./components/Footer/Footer";
+import AboutUs from "./components/AboutUs";
 
 function App() {
   const [cart, setCart] = useState(false);
@@ -28,6 +29,7 @@ function App() {
       <Navbar onShowCart={showCartHandler} />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/location" element={<LocationPage />} />
         <Route path="/sign-up" element={<ModalDialog />} />
         <Route path="/sign-in" element={<FarmerLoginPage />} />

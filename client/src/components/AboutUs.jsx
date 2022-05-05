@@ -14,7 +14,7 @@ const AboutUs = () => {
           style={{ fontWeight: "bold", color: "Black", fontSize: "50px" }}
           varient="h2"
         >
-          ABOUT US
+          ABOUT
         </Typography>
         <br />
         <Typography

@@ -87,7 +87,7 @@ const ProductUpdate = () => {
   };
 
   return (
-    <div>
+    <div style={{ height: "25vh", padding: 50 }}>
       <h1>Product Update</h1>
 
       <section>
